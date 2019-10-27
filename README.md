@@ -7,7 +7,7 @@ This comparator function allows you to sort an array of objects:
 
 ## Install
 ```
-npm install --save harryli0088/objectComparator
+npm install --save harryli0088/object-comparator
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ and where direction is a number, usually 1 or -1 to indicate sorting direction
 
 Sorting a simple array of objects
 ```js
-const comparator = require('objectcomparator');
+const comparator = require('object-comparator');
 
 let simpleArray = [
   {test: 2},
@@ -47,7 +47,7 @@ simpleArray.sort(comparator( [{field:"test",direction:-1}] )); //sort the array 
 
 Sorting an array of nested objects
 ```js
-const comparator = require('objectcomparator');
+const comparator = require('object-comparator');
 
 let nestedArray = [
   {field: {test: 3}},
@@ -64,7 +64,7 @@ nestedArray.sort(comparator( [{field:"field.test",direction:-1}] )); //sort the 
 
 Sorting an array of complex objects with two criteria "test1" and "field.test2"
 ```js
-const comparator = require('objectcomparator');
+const comparator = require('object-comparator');
 
 let complexArray = [
   {test1:4, field:{test2:2}},
