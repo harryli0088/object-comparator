@@ -40,8 +40,8 @@ let simpleArray = [
   {test: 5},
 ];
 
-arr.sort(objectComparator( [{field:"test",direction:1}] )); //sort the array going forwards
-arr.sort(objectComparator( [{field:"test",direction:-1}] )); //sort the array going backwards
+simpleArray.sort(objectComparator( [{field:"test",direction:1}] )); //sort the array going forwards
+simpleArray.sort(objectComparator( [{field:"test",direction:-1}] )); //sort the array going backwards
 ```
 
 
@@ -58,8 +58,8 @@ let nestedArray = [
 ];
 
 
-arr.sort(objectComparator( [{field:"field.test",direction:1}] )); //sort the array going forwards
-arr.sort(objectComparator( [{field:"field.test",direction:-1}] )); //sort the array going backwards
+nestedArray.sort(objectComparator( [{field:"field.test",direction:1}] )); //sort the array going forwards
+nestedArray.sort(objectComparator( [{field:"field.test",direction:-1}] )); //sort the array going backwards
 ```
 
 
@@ -85,9 +85,8 @@ let complexArray = [
   {test1:1, field:{test2:2}},
 ];
 
-
-arr.sort(objectComparator( [{field:"test1",direction:1}, {field:"field.test2",direction:1}] )); //sort with test1 going forwards, test2 going forwards
-arr.sort(objectComparator( [{field:"test1",direction:1}, {field:"field.test2",direction:-1}] )); //sort with test1 going forwards, test2 going backwards
-arr.sort(objectComparator( [{field:"test1",direction:-1}, {field:"field.test2",direction:1}] )); //sort with test1 going backwards, test2 going forwards
-arr.sort(objectComparator( [{field:"test1",direction:-1}, {field:"field.test2",direction:-1}] )); //sort with test1 going backwards, test2 going backwards
+complexArray.sort(objectComparator( [{field:"test1",direction:1}, {field:"field.test2",direction:1}] )); //sort with test1 going forwards, test2 going forwards
+complexArray.sort(objectComparator( [{field:"test1",direction:1}, {field:"field.test2",direction:-1}] )); //sort with test1 going forwards, test2 going backwards
+complexArray.sort(objectComparator( [{field:"test1",direction:-1}, {field:"field.test2",direction:1}] )); //sort with test1 going backwards, test2 going forwards
+complexArray.sort(objectComparator( [{field:"test1",direction:-1}, {field:"field.test2",direction:-1}] )); //sort with test1 going backwards, test2 going backwards
 ```
