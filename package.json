@@ -1,0 +1,23 @@
+{
+  "name": "objectcomparator",
+  "version": "1.0.0",
+  "description": "dynamic object compatator for objects array sorting",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harryli0088/objectComparator.git"
+  },
+  "author": "Harry Li (https://harryxli.com)",
+  "license": "MIT License",
+  "bugs": {
+    "url": "https://github.com/harryli0088/objectComparator/issues"
+  },
+  "homepage": "https://github.com/harryli0088/objectComparator#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
+  }
+}
