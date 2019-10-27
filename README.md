@@ -30,7 +30,7 @@ and where direction is a number, usually 1 or -1 to indicate sorting direction
 
 Sorting a simple array of objects
 ```js
-const objectComparator = require('../index');
+const objectComparator = require('objectComparator');
 
 let simpleArray = [
   {test: 2},
@@ -47,7 +47,7 @@ arr.sort(objectComparator( [{field:"test",direction:-1}] )); //sort the array go
 
 Sorting an array of nested objects
 ```js
-const objectComparator = require('../index');
+const objectComparator = require('objectComparator');
 
 let nestedArray = [
   {field: {test: 3}},
@@ -65,7 +65,7 @@ arr.sort(objectComparator( [{field:"field.test",direction:-1}] )); //sort the ar
 
 Sorting an array of complex objects with two criteria "test1" and "field.test2"
 ```js
-const objectComparator = require('../index');
+const objectComparator = require('objectComparator');
 
 let complexArray = [
   {test1:4, field:{test2:2}},
