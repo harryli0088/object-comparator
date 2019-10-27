@@ -57,7 +57,6 @@ let nestedArray = [
   {field: {test: 1}},
 ];
 
-
 nestedArray.sort(objectComparator( [{field:"field.test",direction:1}] )); //sort the array going forwards
 nestedArray.sort(objectComparator( [{field:"field.test",direction:-1}] )); //sort the array going backwards
 ```
