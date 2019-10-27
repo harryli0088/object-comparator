@@ -1,4 +1,4 @@
-# objectComparator
+# comparator
 
 This comparator function allows you to sort an array of objects:
 1. by multiple criteria (ex: first by field1, then by field2)
@@ -11,9 +11,9 @@ npm install --save harryli0088/object-comparator
 ```
 
 ## Usage
-Supply the objectComparator function as an argument for the array.sort() function.
+Supply the comparator function as an argument for the array.sort() function.
 
-Supply an array of sort criteria to objectComparator in the format:
+Supply an array of sort criteria to comparator in the format:
 ```js
 [
   {field: "field1", direction: 1},
