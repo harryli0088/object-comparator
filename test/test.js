@@ -1,7 +1,7 @@
 'use strict';
 
 const expect = require('chai').expect;
-const objFieldCmp = require('../index');
+const objectComparator = require('../index');
 
 const minVal = 0;
 const maxVal = 99999;
@@ -40,11 +40,11 @@ let complexArray = [
   {test1:1, field:{test2:2}},
 ];
 
-describe('#objFieldCmps', function() {
+describe('#objectComparators', function() {
   it('should sort an array', function() {
     let arr = JSON.parse(JSON.stringify(simpleArray));
 
-    arr.sort(objFieldCmp([{field:"test",direction:1}]));
+    arr.sort(objectComparator([{field:"test",direction:1}]));
 
     let val = minVal;
     for(let i=0; i<arr.length; ++i) {
@@ -58,7 +58,7 @@ describe('#objFieldCmps', function() {
   it('should sort an array backwards', function() {
     let arr = JSON.parse(JSON.stringify(simpleArray));
 
-    arr.sort(objFieldCmp([{field:"test",direction:-1}]));
+    arr.sort(objectComparator([{field:"test",direction:-1}]));
 
     let val = maxVal;
     for(let i=0; i<arr.length; ++i) {
@@ -75,7 +75,7 @@ describe('#objFieldCmps', function() {
   it('should sort a nested array', function() {
     let arr = JSON.parse(JSON.stringify(nestedArray));
 
-    arr.sort(objFieldCmp([{field:"field.test",direction:1}]));
+    arr.sort(objectComparator([{field:"field.test",direction:1}]));
 
     let val = minVal;
     for(let i=0; i<arr.length; ++i) {
@@ -89,7 +89,7 @@ describe('#objFieldCmps', function() {
   it('should sort a nested array backwards', function() {
     let arr = JSON.parse(JSON.stringify(nestedArray));
 
-    arr.sort(objFieldCmp([{field:"field.test",direction:-1}]));
+    arr.sort(objectComparator([{field:"field.test",direction:-1}]));
 
     let val = maxVal;
     for(let i=0; i<arr.length; ++i) {
@@ -103,7 +103,7 @@ describe('#objFieldCmps', function() {
   it('should sort a complex array test1 forwards, test2 forwards', function() {
     let arr = JSON.parse(JSON.stringify(complexArray));
 
-    arr.sort(objFieldCmp([{field:"test1",direction:1}, {field:"field.test2",direction:1}]));
+    arr.sort(objectComparator([{field:"test1",direction:1}, {field:"field.test2",direction:1}]));
 
     let test1Val = minVal;
     let test2Val = minVal;
@@ -126,7 +126,7 @@ describe('#objFieldCmps', function() {
   it('should sort a complex array test1 forwards, test2 backwards', function() {
     let arr = JSON.parse(JSON.stringify(complexArray));
 
-    arr.sort(objFieldCmp([{field:"test1",direction:1}, {field:"field.test2",direction:-1}]));
+    arr.sort(objectComparator([{field:"test1",direction:1}, {field:"field.test2",direction:-1}]));
 
     let test1Val = minVal;
     let test2Val = maxVal;
@@ -149,7 +149,7 @@ describe('#objFieldCmps', function() {
   it('should sort a complex array test1 backwards, test2 forwards', function() {
     let arr = JSON.parse(JSON.stringify(complexArray));
 
-    arr.sort(objFieldCmp([{field:"test1",direction:-1}, {field:"field.test2",direction:1}]));
+    arr.sort(objectComparator([{field:"test1",direction:-1}, {field:"field.test2",direction:1}]));
 
     let test1Val = maxVal;
     let test2Val = minVal;
@@ -172,7 +172,7 @@ describe('#objFieldCmps', function() {
   it('should sort a complex array test1 backwards, test2 backwards', function() {
     let arr = JSON.parse(JSON.stringify(complexArray));
 
-    arr.sort(objFieldCmp([{field:"test1",direction:-1}, {field:"field.test2",direction:-1}]));
+    arr.sort(objectComparator([{field:"test1",direction:-1}, {field:"field.test2",direction:-1}]));
 
     let test1Val = maxVal;
     let test2Val = maxVal;

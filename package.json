@@ -1,7 +1,7 @@
 {
   "name": "objectcomparator",
   "version": "1.0.0",
-  "description": "dynamic object compatator for objects array sorting",
+  "description": "dynamic object comparator for objects array sorting",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec"

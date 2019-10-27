@@ -5,13 +5,13 @@
  * @param  {[array]} sorts [an array of objects in the format [{field:string, direction:number},...]]
  * @return {[number]}       [-1 (less than), 0 (equal), or 1 (greater than)]
  */
-function objFieldCmp(sorts) {
+function objectComparator(sorts) {
   //only consider the first sort (if two elements are equal, recursively consider subsequent sorts)
   if(sorts[0].direction == undefined) {sorts[0].direction = 1;} //default direction to 1
   return function(a,b) {
     if (traverse(a,sorts[0].field) < traverse(b,sorts[0].field)) {return -1*sorts[0].direction;}
     if (traverse(a,sorts[0].field) > traverse(b,sorts[0].field)) {return sorts[0].direction;}
-    if(sorts[1] != undefined) {return objFieldCmp(sorts.slice(1,sorts.length))(a,b);} //these elements are equal, if there are more sorts, recursively consider subsequent sort
+    if(sorts[1] != undefined) {return objectComparator(sorts.slice(1,sorts.length))(a,b);} //these elements are equal, if there are more sorts, recursively consider subsequent sort
     return 0; //we ran out of sorts to consider so these elements are equal
   }
 }
@@ -37,4 +37,4 @@ function traverse(obj, keyStr) {
 
 
 
-module.exports = objFieldCmp;
+module.exports = objectComparator;
