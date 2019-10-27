@@ -30,7 +30,7 @@ and where direction is a number, usually 1 or -1 to indicate sorting direction
 
 Sorting a simple array of objects
 ```js
-const objectComparator = require('objectComparator');
+const comparator = require('objectcomparator');
 
 let simpleArray = [
   {test: 2},
@@ -40,14 +40,14 @@ let simpleArray = [
   {test: 5},
 ];
 
-simpleArray.sort(objectComparator( [{field:"test",direction:1}] )); //sort the array going forwards
-simpleArray.sort(objectComparator( [{field:"test",direction:-1}] )); //sort the array going backwards
+simpleArray.sort(comparator( [{field:"test",direction:1}] )); //sort the array going forwards
+simpleArray.sort(comparator( [{field:"test",direction:-1}] )); //sort the array going backwards
 ```
 
 
 Sorting an array of nested objects
 ```js
-const objectComparator = require('objectComparator');
+const comparator = require('objectcomparator');
 
 let nestedArray = [
   {field: {test: 3}},
@@ -57,14 +57,14 @@ let nestedArray = [
   {field: {test: 1}},
 ];
 
-nestedArray.sort(objectComparator( [{field:"field.test",direction:1}] )); //sort the array going forwards
-nestedArray.sort(objectComparator( [{field:"field.test",direction:-1}] )); //sort the array going backwards
+nestedArray.sort(comparator( [{field:"field.test",direction:1}] )); //sort the array going forwards
+nestedArray.sort(comparator( [{field:"field.test",direction:-1}] )); //sort the array going backwards
 ```
 
 
 Sorting an array of complex objects with two criteria "test1" and "field.test2"
 ```js
-const objectComparator = require('objectComparator');
+const comparator = require('objectcomparator');
 
 let complexArray = [
   {test1:4, field:{test2:2}},
@@ -84,8 +84,8 @@ let complexArray = [
   {test1:1, field:{test2:2}},
 ];
 
-complexArray.sort(objectComparator( [{field:"test1",direction:1}, {field:"field.test2",direction:1}] )); //sort with test1 going forwards, test2 going forwards
-complexArray.sort(objectComparator( [{field:"test1",direction:1}, {field:"field.test2",direction:-1}] )); //sort with test1 going forwards, test2 going backwards
-complexArray.sort(objectComparator( [{field:"test1",direction:-1}, {field:"field.test2",direction:1}] )); //sort with test1 going backwards, test2 going forwards
-complexArray.sort(objectComparator( [{field:"test1",direction:-1}, {field:"field.test2",direction:-1}] )); //sort with test1 going backwards, test2 going backwards
+complexArray.sort(comparator( [{field:"test1",direction:1}, {field:"field.test2",direction:1}] )); //sort with test1 going forwards, test2 going forwards
+complexArray.sort(comparator( [{field:"test1",direction:1}, {field:"field.test2",direction:-1}] )); //sort with test1 going forwards, test2 going backwards
+complexArray.sort(comparator( [{field:"test1",direction:-1}, {field:"field.test2",direction:1}] )); //sort with test1 going backwards, test2 going forwards
+complexArray.sort(comparator( [{field:"test1",direction:-1}, {field:"field.test2",direction:-1}] )); //sort with test1 going backwards, test2 going backwards
 ```
