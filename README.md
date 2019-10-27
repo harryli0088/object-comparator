@@ -2,7 +2,7 @@
 
 This comparator function allows you to sort an array of objects:
 1. by multiple criteria (ex: first by field1, then by field2)
-2. by any direction (ex: forwards or backwards)
+2. in any direction (ex: forwards or backwards)
 3. by nested field values (ex: "field1.field2.etc")
 
 ## Install
